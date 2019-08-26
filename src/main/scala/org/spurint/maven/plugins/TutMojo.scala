@@ -3,7 +3,7 @@ package org.spurint.maven.plugins
 import java.io.{File, FileInputStream}
 import java.net.URLClassLoader
 import java.util
-import java.util.{Collections, Locale}
+import java.util.Collections
 import org.apache.maven.artifact.handler.manager.ArtifactHandlerManager
 import org.apache.maven.artifact.repository.layout.DefaultRepositoryLayout
 import org.apache.maven.artifact.repository.{ArtifactRepository, ArtifactRepositoryPolicy, DefaultArtifactRepository}
@@ -74,10 +74,6 @@ class TutMojo extends AbstractMojo {
   private lazy val mergedRemoteRepositories: util.List[ArtifactRepository] =
     (this.remoteRepositories.asScala :+ tutRepository).asJava
 
-  private val classpathSeparator: String =
-    if (System.getProperty("os.name").toLowerCase(Locale.US).contains("windows")) ";"
-    else ":"
-
   override def execute(): Unit = {
     if (this.skip) {
       return
@@ -114,7 +110,7 @@ class TutMojo extends AbstractMojo {
       this.targetDirectory.getAbsolutePath,
       this.nameFilter,
       "-classpath",
-      (resolvedDependencies ++ projectOutputPaths).distinct.map(_.getAbsolutePath).mkString(classpathSeparator)
+      (resolvedDependencies ++ projectOutputPaths).distinct.map(_.getAbsolutePath).mkString(File.pathSeparator)
     ) ++ scalacOptions ++ pluginJars
 
     runTut(tutResolvedDependencies.distinct, args)
