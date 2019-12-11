@@ -42,7 +42,7 @@ class TutMojo extends AbstractMojo {
   @Parameter(property = "tut.repositoryUrl", defaultValue = "https://dl.bintray.com/tpolecat/maven")
   private var tutRepositoryUrl: String = _
 
-  @Parameter(property = "tut.version", defaultValue = "0.6.9")
+  @Parameter(property = "tut.version", defaultValue = "0.6.13")
   private var tutVersion: String = _
 
   @Parameter(defaultValue = "${session}", required = true, readonly = true)
