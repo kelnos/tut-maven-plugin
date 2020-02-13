@@ -24,12 +24,12 @@ component will be added to the plugin's version number.
           <goals>
             <goal>generate-documentation</goal>
           </goals>
+          <configuration>
+            <sourceDirectory>${project.basedir}/docs-src</sourceDirectory>
+            <targetDirectory>${project.basedir}/docs</targetDirectory>
+            <nameFilter>.*\\.(md|markdown|txt|htm|html)$</nameFilter>
+          </configuration>
         </execution>
-        <configuration>
-          <sourceDirectory>${project.basedir}/docs-src</sourceDirectory>
-          <targetDirectory>${project.basedir}/docs</targetDirectory>
-          <nameFilter>.*\\.(md|markdown|txt|htm|html)$</nameFilter>
-        </configuration>
       </executions>
     </plugin>
   </plugins>
