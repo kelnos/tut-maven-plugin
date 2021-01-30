@@ -50,7 +50,7 @@
     <maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
     <maven-project.version>3.0-alpha-2</maven-project.version>
     <maven-shared.version>3.2.1</maven-shared.version>
-    <maven-common-artifact-filters.version>3.1.0</maven-common-artifact-filters.version>
+    <maven-common-artifact-filters.version>3.1.1</maven-common-artifact-filters.version>
     <plexus-utils.version>3.3.0</plexus-utils.version>
     <scala.binary.version>2.12</scala.binary.version>
     <scala.version>2.12.9</scala.version>
